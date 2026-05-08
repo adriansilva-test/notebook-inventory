@@ -24,10 +24,10 @@ const S = {
 }
 
 const navItems = [
-  { id:'dashboard',     label:'Dashboard',       icon:'▦' },
   { id:'inventario',    label:'Inventário',       icon:'◫' },
   { id:'movimentacoes', label:'Movimentações',    icon:'⇅' },
   { id:'usuarios',      label:'Usuários',         icon:'◎' },
+  { id:'dashboard',     label:'Dashboard',        icon:'▦' },
 ]
 
 export default function Layout({ children, page, setPage, perfil, session }) {
