@@ -42,7 +42,7 @@ export default function Layout({ children, page, setPage, perfil, session }) {
     <div style={S.app}>
       <div style={S.sidebar}>
         <div style={S.logo}>
-          <p style={S.logoText}>NotebookTrack</p>
+          <p style={S.logoText}>Gupy Estoque</p>
           <p style={S.logoSub}>Gestão de equipamentos</p>
         </div>
         <nav style={S.nav}>
