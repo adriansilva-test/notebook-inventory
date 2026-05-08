@@ -22,7 +22,7 @@ const canRegister = (perfil) => perfil?.perfil === 'gestor' || perfil?.perfil ==
 export default function Movimentacoes({ perfil }) {
   const [movs, setMovs] = useState([])
   const [notebooks, setNotebooks] = useState([])
-  const [tab, setTab] = useState('todos')
+  const [tab, setTab] = useState(filtroInicial || 'todos')
   const [modal, setModal] = useState(null)
   const [form, setForm] = useState({})
   const [saving, setSaving] = useState(false)
