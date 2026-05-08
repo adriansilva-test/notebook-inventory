@@ -26,8 +26,6 @@ const S = {
 const navItems = [
   { id:'inventario',    label:'Inventário',       icon:'◫' },
   { id:'movimentacoes', label:'Movimentações',    icon:'⇅' },
-  {page === 'entradas' && <Movimentacoes perfil={perfil} filtroInicial="entrada" />}
-{page === 'saidas'   && <Movimentacoes perfil={perfil} filtroInicial="saida" />}
   { id:'entradas',      label:'↳ Entradas',       icon:'↓', sub:true },
   { id:'saidas',        label:'↳ Saídas',         icon:'↑', sub:true },
   { id:'usuarios',      label:'Usuários',         icon:'◎' },
