@@ -26,6 +26,8 @@ const S = {
 const navItems = [
   { id:'inventario',    label:'Inventário',       icon:'◫' },
   { id:'movimentacoes', label:'Movimentações',    icon:'⇅' },
+  { id:'entradas',      label:'↳ Entradas',       icon:'↓', sub:true },
+  { id:'saidas',        label:'↳ Saídas',         icon:'↑', sub:true },
   { id:'usuarios',      label:'Usuários',         icon:'◎' },
   { id:'dashboard',     label:'Dashboard',        icon:'▦' },
 ]
