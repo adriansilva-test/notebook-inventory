@@ -51,7 +51,7 @@ export default function Layout({ children, page, setPage, perfil, session }) {
           {navItems.map(item => {
             if (item.id === 'usuarios' && perfil?.perfil !== 'gestor') return null
             return (
-              <div key={item.id} style={S.navItem(page === item.id)} onClick={() => setPage(item.id)}>
+              <div key={item.id} style={{...S.navItem(page === item.id), paddingLeft: item.sub ? '2rem' : '1.25rem', fontSize: item.sub ? 12 : 13}} onClick={() => setPage(item.id)}>
                 <span style={{ fontSize:14, width:18, textAlign:'center' }}>{item.icon}</span>
                 {item.label}
               </div>
