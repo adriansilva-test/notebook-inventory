@@ -45,6 +45,8 @@ export default function App() {
       {page === 'dashboard'      && <Dashboard />}
       {page === 'inventario'     && <Inventario perfil={perfil} />}
       {page === 'movimentacoes'  && <Movimentacoes perfil={perfil} />}
+      {page === 'entradas' && <Movimentacoes perfil={perfil} filtroInicial="entrada" />}
+{page === 'saidas'   && <Movimentacoes perfil={perfil} filtroInicial="saida" />}
       {page === 'usuarios'       && <Usuarios perfil={perfil} />}
     </Layout>
   )
