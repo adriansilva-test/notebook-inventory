@@ -6,10 +6,12 @@ const S = {
   logo: { padding:'1.25rem', borderBottom:'1px solid #e8eaf0' },
   logoText: { fontSize:15, fontWeight:600, color:'#1a3a5c', margin:0 },
   logoSub: { fontSize:11, color:'#888', marginTop:2 },
-  nav: { flex:1, paddingTop:8 },
-  navItem: (active) => ({
-    display:'flex', alignItems:'center', gap:10, padding:'10px 1.25rem',
-    fontSize:13, cursor:'pointer', color: active ? '#185fa5' : '#555',
+  nav: { flex:1, paddingTop:8, overflowY:'auto' },
+  navItem: (active, sub) => ({
+    display:'flex', alignItems:'center', gap:10,
+    padding: sub ? '7px 1.25rem 7px 2rem' : '10px 1.25rem',
+    fontSize: sub ? 12 : 13, cursor:'pointer',
+    color: active ? '#185fa5' : '#555',
     background: active ? '#e6f1fb' : 'transparent',
     borderLeft: active ? '2px solid #378add' : '2px solid transparent',
     fontWeight: active ? 500 : 400, transition:'all 0.15s',
@@ -24,6 +26,8 @@ const S = {
 }
 
 const navItems = [
+  { id:'estoque',       label:'Estoque',         icon:'📦' },
+  { id:'atribuicoes',   label:'Atribuições',      icon:'👤' },
   { id:'inventario',    label:'Inventário',       icon:'◫' },
   { id:'movimentacoes', label:'Movimentações',    icon:'⇅' },
   { id:'entradas',      label:'↳ Entradas',       icon:'↓', sub:true },
@@ -45,14 +49,14 @@ export default function Layout({ children, page, setPage, perfil, session }) {
       <div style={S.sidebar}>
         <div style={S.logo}>
           <p style={S.logoText}>Gupy Estoque</p>
-          <p style={S.logoSub}>Gestão de equipamentos</p>
+          <p style={S.logoSub}>Gestão de estoque</p>
         </div>
         <nav style={S.nav}>
           {navItems.map(item => {
             if (item.id === 'usuarios' && perfil?.perfil !== 'gestor') return null
             return (
-              <div key={item.id} style={{...S.navItem(page === item.id), paddingLeft: item.sub ? '2rem' : '1.25rem', fontSize: item.sub ? 12 : 13}} onClick={() => setPage(item.id)}>
-                <span style={{ fontSize:14, width:18, textAlign:'center' }}>{item.icon}</span>
+              <div key={item.id} style={S.navItem(page === item.id, item.sub)} onClick={() => setPage(item.id)}>
+                <span style={{ fontSize: item.sub ? 12 : 14, width:18, textAlign:'center' }}>{item.icon}</span>
                 {item.label}
               </div>
             )
